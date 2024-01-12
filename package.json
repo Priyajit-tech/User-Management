@@ -1,0 +1,25 @@
+{
+  "name": "user-management",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Priyajit_Tech",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Priyajit-tech/DummyRest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Priyajit-tech/DummyRest/issues"
+  },
+  "homepage": "https://github.com/Priyajit-tech/DummyRest#readme",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
