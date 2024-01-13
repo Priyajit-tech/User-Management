@@ -2,16 +2,20 @@ require('dotenv').config();
 
 const express = require('express');
 const usersRouter = require('./routes/usersRoutes');
-
-
+const https = require("https");
+const fs = require("fs");
 const app = express();
-app.use(express.json());
+const port = process.env.PORT || 443;
 
+app.use(express.json());
 app.use('/users', usersRouter);
 
-
-const port = process.env.PORT || 8443;
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+https
+  .createServer(
+    {
+        key: fs.readFileSync("key.pem"),
+        cert: fs.readFileSync("cert.pem"),
+      },app)
+  .listen(port, ()=>{
+    console.log(`server is runing at port ${port}`)
+  });
